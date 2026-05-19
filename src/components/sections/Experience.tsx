@@ -16,7 +16,7 @@ export default function ExperienceSection({ scroll }: SectionProps) {
       <Header
         name="experience"
         left="about"
-        right="skills"
+        right="projects"
         num={2}
         nav={scroll}
       />

@@ -13,12 +13,19 @@ export type Experience = {
 };
 export type Skill = { name: string; inside?: Skill[] };
 export type ContactLink = { label: string; value: string; href: string };
+export type Project = {
+  name: string;
+  description: string;
+  tech: string[];
+  links: { label: string; href: string }[];
+};
 
 export interface Profile {
   name: string;
   title: string;
   about: { intro: IntroLine[]; sections: AboutSection[] };
   experience: Experience[];
+  projects: Project[];
   skills: Skill[];
   contact: { blurb: string; links: ContactLink[] };
 }
@@ -65,6 +72,31 @@ export const profile: Profile = {
       points: [
         "Maintained and improved existing web applications.",
         "Wrote tests and helped with code reviews.",
+      ],
+    },
+  ],
+
+  // projects() screen — your highlighted work
+  projects: [
+    {
+      name: "Project One",
+      description:
+        "A short, punchy description of what this project does and the " +
+        "problem it solves. One or two sentences is plenty.",
+      tech: ["Next.js", "TypeScript", "Tailwind"],
+      links: [
+        { label: "GitHub", href: "https://github.com/yourusername/project-one" },
+        { label: "Live", href: "https://project-one.example.com" },
+      ],
+    },
+    {
+      name: "Project Two",
+      description:
+        "Another project highlight. Mention the impact or an interesting " +
+        "technical challenge you solved.",
+      tech: ["React", "Node.js", "PostgreSQL"],
+      links: [
+        { label: "GitHub", href: "https://github.com/yourusername/project-two" },
       ],
     },
   ],
@@ -121,6 +153,7 @@ export const pageOrder = [
   "home",
   "about",
   "experience",
+  "projects",
   "skills",
   "contact",
 ] as const;

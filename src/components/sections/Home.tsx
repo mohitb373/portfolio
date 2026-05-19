@@ -13,8 +13,9 @@ interface HomeProps {
 const MENU = [
   { label: "> about_me()", target: 1 },
   { label: "> experience()", target: 2 },
-  { label: "> skills()", target: 3 },
-  { label: "> contact()", target: 4 },
+  { label: "> projects()", target: 3 },
+  { label: "> skills()", target: 4 },
+  { label: "> contact()", target: 5 },
 ];
 
 export default function Home({ scroll, onLoad }: HomeProps) {

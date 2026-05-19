@@ -90,9 +90,9 @@ export default function Skills({ scroll }: SectionProps) {
     >
       <Header
         name="skills"
-        left="experience"
+        left="projects"
         right="contact"
-        num={3}
+        num={4}
         nav={scroll}
       />
       <div

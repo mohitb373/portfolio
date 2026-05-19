@@ -13,7 +13,7 @@ export default function Contact({ scroll }: SectionProps) {
       className="screen-h"
       style={{ display: "grid", gridTemplateRows: "auto 1fr" }}
     >
-      <Header name="contact" left="skills" num={4} nav={scroll} />
+      <Header name="contact" left="skills" num={5} nav={scroll} />
       <div
         className="scroller grid place-content-center"
         style={{ overflow: "scroll", padding: "5vmin" }}

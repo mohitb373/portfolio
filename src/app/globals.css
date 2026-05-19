@@ -118,6 +118,10 @@
     transform: rotateY(calc(90deg * calc(-4 + var(--page-rotation))))
       translateX(calc(calc(var(--page-rotation) - 4) * -20vw));
   }
+  .page[data-test="5"] {
+    transform: rotateY(calc(90deg * calc(-5 + var(--page-rotation))))
+      translateX(calc(calc(var(--page-rotation) - 5) * -20vw));
+  }
 
   /* Animated, masked, perspective-tilted background */
   .bg {
@@ -173,5 +177,18 @@
   100% {
     -webkit-mask-position: 0px calc(var(--background-size) * -1);
     mask-position: 0px calc(var(--background-size) * -1);
+  }
+}
+
+/* Respect users who prefer reduced motion: kill the scrolling backdrop
+   and the cursor blink. The carousel's per-move duration is also zeroed
+   out from JS (see Portfolio.tsx). */
+@media (prefers-reduced-motion: reduce) {
+  .bg::before {
+    -webkit-animation: none;
+    animation: none;
+  }
+  .animate-pulse {
+    animation: none !important;
   }
 }
